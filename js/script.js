@@ -60,3 +60,9 @@ function constroeCronometro() {
     minutos < 10 ? "0" + minutos : minutos
   }:${segundos < 10 ? "0" + segundos : segundos}`;
 }
+
+// Eventos de click adicionados aos botôes para iniciar as funçôes
+
+iniciar.addEventListener("click", iniciarCronometro);
+pausar.addEventListener("click", pausarCronometro);
+parar.addEventListener("click", pararCronometro);
