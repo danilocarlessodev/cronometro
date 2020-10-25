@@ -19,12 +19,18 @@ function iniciarCronometro() {
     segundos++;
     constroeCronometro();
   }, 1000);
+
+  // Removido o evento aqui para caso de mais de 1 click em iniciar com ele já ativo não desconfigurar a contagem (Em caso de 2 cliques aumentaria de 2 em 2 os segundos)
+  iniciar.removeEventListener("click", iniciarCronometro);
 }
 
 // Função responsável por pausar o cronômetro
 
 function pausarCronometro() {
   clearInterval(cronometro);
+
+  // Aqui eu adiciono o evento novamente para que em caso de pausa, o usuário possa continuar de onde parou
+  iniciar.addEventListener("click", iniciarCronometro);
 }
 
 // Função de parar/resetar o cronômetro
